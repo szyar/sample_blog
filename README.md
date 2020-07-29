@@ -12,3 +12,4 @@
 <p>Go to the app directory.</p>
 run 
 <pre>rails s</pre>
+<p>Enjoy</p>
