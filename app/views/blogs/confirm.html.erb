@@ -1,0 +1,9 @@
+<h3> Send with the following contents. </h3>
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+<%= form.hidden_field :title %>
+<%= form.hidden_field :content %>
+<p> Title: <%= @blog.title %> </p>
+<p> Body: <%= @blog.content %> </p>
+<%= form.submit "register" %>
+<%  form.submit "back", name: 'back' %>
+<% end %>

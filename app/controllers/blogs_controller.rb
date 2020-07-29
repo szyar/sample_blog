@@ -9,16 +9,25 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog =Blog.new
+    @blog = Blog.new
   end
 
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to blogs_path, notice: "You have created a blog!"
-    else
+    @blog = Blog.new (blog_params)
+    if params[:back]
       render :new
+    else
+      if @blog.save
+        redirect_to blogs_path, notice: "Blog created!"
+      else
+        render :new
+      end
     end
+  end
+
+  def confirm
+    @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
 
   def edit
