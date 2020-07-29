@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @blogs = Blog.all
@@ -22,16 +22,20 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    def update
-      if @blog.update(blog_params)
-        redirect_to blogs_path, notice: "You edited the blog"
-      else
-        render :edit
-      end
+  end
+
+  def update
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "You edited the blog!"
+    else
+      render :edit
     end
   end
 
-
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path, notice: "You deleted the blog!"
+  end
 
   private
   def blog_params
