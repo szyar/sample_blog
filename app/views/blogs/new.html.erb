@@ -1,11 +1,12 @@
 <%= form_with(model: @blog, local: true) do |form| %>
+<h1>Create New Blog</h1>
 <div class="blog_title">
-    <%= form.label :title %>
+    <%= form.label :title %> <br>
     <%= form.text_field :title %>
 </div>
 <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :content %> <br>
+    <%= form.text_field :content %> <br><br>
 </div>
 <%= form.submit %>
 <p><%= link_to 'View posted blogs', blogs_path %> </p>
