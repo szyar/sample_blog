@@ -10,6 +10,8 @@
 
 <p>Download or clone the app.</p>
 <p>Go to the app directory.</p>
-run 
+run
+<pre>rails db:create</pre>
+<pre>rails db:migrate</pre> 
 <pre>rails s</pre>
 <p>Enjoy</p>
