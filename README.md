@@ -14,4 +14,3 @@ run
 <pre>rails db:create</pre>
 <pre>rails db:migrate</pre> 
 <pre>rails s</pre>
-<p>Enjoy</p>
